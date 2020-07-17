@@ -8,16 +8,12 @@ import java.util.Scanner;
 public class TargetCellImpl implements TargetCell {
 
     private Scanner input;
-    private int maxRow;
-    private int maxCol;
 
-    public TargetCellImpl(Scanner input, int maxRow, int maxCol) {
+    public TargetCellImpl(Scanner input) {
         this.input = input;
-        this.maxRow = maxRow;
-        this.maxCol = maxCol;
     }
 
-    public int[] getTargetCell() {
+    public int[] getTargetCell(int maxRow, int maxCol) {
         int[] targetCell = new int[3];
         boolean isValid = true;
         while(isValid) {
@@ -26,7 +22,7 @@ public class TargetCellImpl implements TargetCell {
             targetCell[0] = input.nextInt() - 1;
             System.out.print("Target cell column: ");
             targetCell[1] = input.nextInt() - 1;
-            isValid = checkCoordinates(targetCell[0], targetCell[1]);
+            isValid = checkCoordinates(targetCell[0], targetCell[1], maxRow, maxCol);
         }
         System.out.print("Number of generations: ");
         targetCell[2] = input.nextInt();
@@ -34,8 +30,8 @@ public class TargetCellImpl implements TargetCell {
         return targetCell;
     }
 
-    private boolean checkCoordinates(int row, int col) {
-        if(row < maxRow && col < maxCol && row > 0 && col > 0) {
+    private boolean checkCoordinates(int row, int col, int maxRow, int maxCol) {
+        if(row < maxRow && col < maxCol && row >= 0 && col >= 0) {
             return false;
         }
         System.out.printf("The cell row should be between 1 and %d and the cell column should between 1 and %d!%n", maxRow, maxCol);

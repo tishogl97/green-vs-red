@@ -1,6 +1,6 @@
 package com.company.contracts;
 
-public interface GridGenerator {
+public interface GenerationZero {
 
 
     int[][] consoleInput();

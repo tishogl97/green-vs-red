@@ -1,14 +1,14 @@
 package com.company;
 
-import com.company.contracts.GridGenerator;
+import com.company.contracts.GenerationZero;
 
 import java.util.Scanner;
 
-public class GridGeneratorImpl implements GridGenerator {
+public class GenerationZeroImpl implements GenerationZero {
 
     private Scanner input;
 
-    public GridGeneratorImpl(Scanner input) {
+    public GenerationZeroImpl(Scanner input) {
         this.input = input;
     }
 
