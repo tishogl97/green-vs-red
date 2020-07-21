@@ -18,10 +18,9 @@ public class TargetCellImpl implements TargetCell {
         boolean isValid = true;
         while(isValid) {
             System.out.print("Target cell row: ");
-            // Removing 1, because the user will not need to set the row to 0 if he wants the 1st row
-            targetCell[0] = input.nextInt() - 1;
+            targetCell[0] = input.nextInt();
             System.out.print("Target cell column: ");
-            targetCell[1] = input.nextInt() - 1;
+            targetCell[1] = input.nextInt();
             isValid = checkCoordinates(targetCell[0], targetCell[1], maxRow, maxCol);
         }
         System.out.print("Number of generations: ");
